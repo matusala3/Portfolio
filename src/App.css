@@ -14,11 +14,31 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+#root {
+  min-height: 100vh; /* Ensure the root element takes at least the full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   font-family: var(--font-family);
   background-color: var(--background-color);
   color: var(--text-color);
   overflow-x: hidden;
+}
+
+.page-content {
+  flex: 1; /* Allow the content to grow and fill the available space */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 20px; /* Add some padding for aesthetics */
 }
 
 /* Navbar Styles */
@@ -447,9 +467,12 @@ p {
 
   .profile,
   .reach-out,
-  .content-section .education,
   .content-section .skills {
     width: 100%;
-    margin: 20px 0;
+    margin: 50px 0;
+  }
+  .content-section .education {
+    width: 100%;
+    margin-top: 100px;
   }
 }
