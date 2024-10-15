@@ -23,7 +23,7 @@ const projectData = [
   {
     id: 3,
     title: "ERP System",
-    description: "",
+    description: "Full Stack Web Application",
     image: Erp,
     link: "https://github.com/SAPetta",
   },
