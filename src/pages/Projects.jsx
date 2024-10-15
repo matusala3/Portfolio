@@ -1,7 +1,6 @@
-import Speedy from "/portfolio/images/speedy.png";
-import suomistay from "/portfolio/images/suomistay.png";
-import Erp from "/portfolio/images/erp.png";
-
+import Speedy from "../assets/Speedy.jpg";
+import suomistay from "../assets/suomistay.jpg";
+import Erp from "../assets/erp.jpg";
 import { Link } from "react-router-dom";
 
 // Import other project images as needed
