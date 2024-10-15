@@ -1,5 +1,5 @@
 import Speedy from "../assets/Speedy.jpg";
-import SuomiStay from "../assets/suomistay.jpg";
+import suomistay from "../assets/suomistay.jpg";
 import Erp from "../assets/erp.jpg";
 import { Link } from "react-router-dom";
 
@@ -15,9 +15,9 @@ const projectData = [
   },
   {
     id: 2,
-    title: "SuomiStay",
+    title: "suomistay",
     description: "Full Stack Mobile Application",
-    image: SuomiStay,
+    image: suomistay,
     link: "https://github.com/Mobile-Dev-Project",
   },
   {
