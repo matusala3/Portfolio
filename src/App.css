@@ -465,14 +465,22 @@ p {
     font-size: 1rem;
   }
 
-  .profile,
-  .reach-out,
   .content-section .skills {
     width: 100%;
-    margin: 50px 0;
+    margin-top: 50px;
   }
   .content-section .education {
     width: 100%;
     margin-top: 100px;
+  }
+
+  .profile {
+    margin-top: 100px;
+    width: 100%;
+  }
+
+  .reach-out {
+    margin-top: 0px;
+    width: 100%;
   }
 }
