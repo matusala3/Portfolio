@@ -76,11 +76,12 @@ export default function Introduction() {
               Software Engineering Student
             </h2>
             <p className="text-base md:text-lg mb-6 text-[#fff]">
-              Motivated and technically skilled 3rd-year Software Engineering
-              student with hands-on experience in software development,
-              particularly in full-stack web and mobile applications. Excellent
-              in C++, Java, and low-level programming, with a strong interest in
-              computer systems architecture and microprocessor fundamentals.
+              Software engineering student with 6+ months of professional internship experience
+              specializing in designing, developing, and deploying scalable web applications. Proficient in
+              modern JavaScript frameworks (React, Next.js, Node.js), relational and NoSQL databases, and
+              secure authentication systems. Strong foundation in C/C++ through intensive system programming
+              curriculum at Hive Helsinki (42 Network). Demonstrated ability to lead cross-functional teams,
+              collaborate with business stakeholders, and deliver production-quality code following SDLC best practices.
             </p>
             <div className="flex justify-center md:justify-start space-x-4 mb-6">
               <Button
@@ -112,19 +113,35 @@ export default function Introduction() {
                 </a>
               </Button>
             </div>
-            <Button
-              asChild
-              className="bg-[#e0bf5f] text-[#181818] hover:bg-[#e0bf5f]/80"
-            >
-              <a
-                href="/CV.docx"
-                download="CV.docx"
-                className="flex items-center gap-2"
+            <div className="flex gap-3">
+              <Button
+                asChild
+                className="bg-[#e0bf5f] text-[#181818] hover:bg-[#e0bf5f]/80"
               >
-                <Download className="h-4 w-4" />
-                <span>Download CV</span>
-              </a>
-            </Button>
+                <a
+                  href="/CV.pdf"
+                  download="Matusala_Gebrehiwot_CV.pdf"
+                  className="flex items-center gap-2"
+                >
+                  <Download className="h-4 w-4" />
+                  <span>Download CV (PDF)</span>
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-[#e0bf5f] text-[#e0bf5f] hover:bg-[#e0bf5f]/10"
+              >
+                <a
+                  href="/CV.docx"
+                  download="Matusala_Gebrehiwot_CV.docx"
+                  className="flex items-center gap-2"
+                >
+                  <Download className="h-4 w-4" />
+                  <span>DOCX</span>
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

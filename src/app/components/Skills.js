@@ -6,28 +6,34 @@ import { inter, playfair } from "@/app/styles/fonts";
 export default function Skills() {
   const skills = {
     "Programming Languages": [
+      { name: "JavaScript", level: 90 },
       { name: "C/C++", level: 90 },
+      { name: "Java", level: 85 },
       { name: "Python", level: 85 },
-      { name: "Java", level: 80 },
-      { name: "JavaScript", level: 85 },
-      { name: "SQL", level: 75 },
+      { name: "TypeScript", level: 80 },
+      { name: "SQL", level: 80 },
       { name: "HTML/CSS", level: 90 },
     ],
-    "Systems/Frameworks": [
-      { name: "Linux", level: 80 },
-      { name: "Git", level: 85 },
-      { name: "Docker", level: 70 },
-      { name: "React", level: 85 },
-      { name: "Express.js", level: 75 },
-      { name: "Tailwind CSS", level: 90 },
+    "Frameworks & Tools": [
+      { name: "React/Next.js", level: 90 },
+      { name: "Node.js/Express", level: 90 },
+      { name: "React Native", level: 85 },
+      { name: "Spring Boot", level: 75 },
+      { name: "MongoDB", level: 85 },
+      { name: "PostgreSQL", level: 80 },
+      { name: "Git", level: 90 },
+      { name: "Docker", level: 75 },
+      { name: "Jest", level: 80 },
     ],
-    "Key Skills": [
-      { name: "Test automation", level: 80 },
-      { name: "Debugging", level: 85 },
-      { name: "System architecture", level: 75 },
-      { name: "Agile methodologies", level: 80 },
-      { name: "Problem-solving", level: 90 },
-      { name: "Team collaboration", level: 85 },
+    "Development Practices": [
+      { name: "RESTful API Design", level: 90 },
+      { name: "Agile/SDLC", level: 85 },
+      { name: "Unit Testing", level: 85 },
+      { name: "Code Review", level: 80 },
+      { name: "Authentication (JWT/OAuth)", level: 85 },
+      { name: "System Architecture", level: 80 },
+      { name: "Debugging & Root Cause Analysis", level: 90 },
+      { name: "Problem-solving", level: 95 },
     ],
   };
 
@@ -35,9 +41,9 @@ export default function Skills() {
     switch (category) {
       case "Programming Languages":
         return <Code className="w-6 h-6 text-[#e0bf5f]" />;
-      case "Systems/Frameworks":
+      case "Frameworks & Tools":
         return <Server className="w-6 h-6 text-[#e0bf5f]" />;
-      case "Key Skills":
+      case "Development Practices":
         return <Brain className="w-6 h-6 text-[#e0bf5f]" />;
       default:
         return null;
