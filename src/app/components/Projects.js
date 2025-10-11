@@ -104,30 +104,30 @@ export default function Projects() {
               className="bg-[#181818] border border-[#e0bf5f]/20 overflow-hidden"
             >
               <div className="md:flex">
-                <div className="md:w-1/3">
+                <div className="md:w-2/5">
                   <Image
                     src={project.image}
                     alt={project.title}
-                    width={300}
-                    height={200}
-                    className="w-full h-48 md:h-full object-cover"
+                    width={400}
+                    height={300}
+                    className="w-full h-64 md:h-full object-cover"
                   />
                 </div>
-                <div className="md:w-2/3">
+                <div className="md:w-3/5">
                   <CardHeader>
-                    <CardTitle className="text-2xl text-[#e0bf5f]">
+                    <CardTitle className="text-2xl md:text-3xl text-[#e0bf5f]">
                       {project.title}
                     </CardTitle>
-                    <p className="text-[#fff] mt-1">{project.description}</p>
+                    <p className="text-[#fff] text-base md:text-lg mt-2">{project.description}</p>
                   </CardHeader>
                   <CardContent>
-                    <div className="flex items-center space-x-4 text-sm text-[#fff]/80 mb-4">
+                    <div className="flex items-center space-x-4 text-sm md:text-base text-[#fff]/80 mb-4">
                       <span className="flex items-center">
-                        <Calendar className="w-4 h-4 mr-1 text-[#e0bf5f]" />
+                        <Calendar className="w-4 h-4 md:w-5 md:h-5 mr-1 text-[#e0bf5f]" />
                         {project.date}
                       </span>
                       <span className="flex items-center">
-                        <MapPin className="w-4 h-4 mr-1 text-[#e0bf5f]" />
+                        <MapPin className="w-4 h-4 md:w-5 md:h-5 mr-1 text-[#e0bf5f]" />
                         {project.location}
                       </span>
                     </div>
@@ -136,13 +136,13 @@ export default function Projects() {
                         <Badge
                           key={idx}
                           variant="secondary"
-                          className="mr-2 mb-2 bg-[#e0bf5f]/20 text-[#e0bf5f] border-[#e0bf5f]/50"
+                          className="mr-2 mb-2 text-sm md:text-base bg-[#e0bf5f]/20 text-[#e0bf5f] border-[#e0bf5f]/50"
                         >
                           {tech}
                         </Badge>
                       ))}
                     </div>
-                    <ul className="list-disc list-inside text-sm text-[#fff] space-y-1 mb-4">
+                    <ul className="list-disc list-inside text-sm md:text-base text-[#fff] space-y-2 mb-4">
                       {project.details.map((detail, idx) => (
                         <li key={idx}>{detail}</li>
                       ))}
