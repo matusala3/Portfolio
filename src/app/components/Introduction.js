@@ -88,7 +88,7 @@ export default function Introduction() {
                 variant="outline"
                 size="icon"
                 asChild
-                className="border-[#e0bf5f] text-[#181818] hover:bg-[#e0bf5f] hover:text-[#181818]"
+                className="border-[#e0bf5f] hover:bg-[#e0bf5f] hover:text-[#181818] bg-[#181818] text-[#e0bf5f]"
               >
                 <a
                   href="https://github.com/matusala3"
@@ -102,7 +102,7 @@ export default function Introduction() {
                 variant="outline"
                 size="icon"
                 asChild
-                className="border-[#e0bf5f] text-[#181818] hover:bg-[#e0bf5f] hover:text-[#181818]"
+                className="bg-[#e0bf5f] text-[#181818] hover:bg-[#e0bf5f]/80 border-[#e0bf5f]"
               >
                 <a
                   href="https://www.linkedin.com/in/matusala-gebrehiwot-b0435624b/"
@@ -130,7 +130,8 @@ export default function Introduction() {
               <Button
                 asChild
                 variant="outline"
-                className="border-[#e0bf5f] text-[#e0bf5f] hover:bg-[#e0bf5f]/10"
+                className="border-[#e0bf5f] hover:bg-[#e0bf5f] hover:text-[#181818] bg-[#181818] text-[#e0bf5f]"
+
               >
                 <a
                   href="/CV.docx"

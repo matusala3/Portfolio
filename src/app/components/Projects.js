@@ -1,15 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, ExternalLink, Github } from "lucide-react";
+import { Calendar, MapPin, ExternalLink, Github, ArrowRight } from "lucide-react";
 import { inter, playfair } from "@/app/styles/fonts";
 
 export default function Projects() {
   const projects = [
     {
+      id: "hinura-thesis",
       title: "AI-Driven Gamified Learning Platform (Bachelor's Thesis)",
       description: "Adaptive Educational Platform with AI Integration – Backend Lead & Algorithm Developer",
+      summary: "Leading backend development for an AI-powered adaptive learning platform targeting learners aged 7-18. Features intelligent assessment system, gamification elements, and adaptive difficulty algorithms based on educational research.",
       details: [
         "Leading backend development for AI-powered adaptive learning platform targeting learners aged 7-18 as part of 3-person thesis team (Sep-Dec 2024)",
         "Engineered intelligent assessment system with 36 multi-subject questions (Math, Reading, Science) determining 5-level skill proficiency (Beginner to Expert) based on performance percentages",
@@ -31,8 +34,10 @@ export default function Projects() {
       },
     },
     {
+      id: "speedy-delivery",
       title: "Speedy-Delivery Project",
       description: "Full Stack Web Delivery Service – Team Lead",
+      summary: "Led 3-person development team building a full-stack web delivery service with real-time tracking, IoT locker integration, and secure authentication. Managed complete SDLC from planning to deployment.",
       details: [
         "Led 3-person development team through complete Software Development Life Cycle (SDLC), managing project planning, task allocation, and timeline adherence",
         "Architected and developed four integrated system components: Backend API (Node.js/Express), Consumer Web App (React), Driver App (React), and IoT Locker Simulator",
@@ -52,8 +57,10 @@ export default function Projects() {
       },
     },
     {
+      id: "suomistay",
       title: "SuomiStay Oy",
       description: "Mobile Booking System – Team Leader",
+      summary: "Directed 3-person team developing a React Native mobile booking application for hotels across Finland. Built complete booking workflow with RESTful API integration and cross-platform UI.",
       details: [
         "Directed 3-person team in developing React Native mobile application for hotel booking system across Finland",
         "Developed complete booking workflow including search functionality, availability checking, reservation system, and booking confirmation",
@@ -72,8 +79,10 @@ export default function Projects() {
       },
     },
     {
+      id: "hive-projects",
       title: "Low-Level System Programming Projects (Hive Helsinki/42)",
       description: "System Architecture & C Programming",
+      summary: "Completed intensive low-level programming projects including Unix shell implementation, optimized sorting algorithms, and multithreading challenges. Focused on system architecture, memory management, and algorithm design.",
       details: [
         "Minishell: Engineered Unix shell replica in C, implementing process management, pipe operations, redirections, environment variable handling, and signal processing, demonstrating deep understanding of system architecture and OS fundamentals",
         "Push Swap: Developed optimized sorting algorithm in C with maximum efficiency constraints, showcasing advanced data structures and algorithm design skills with complexity analysis",
@@ -110,7 +119,7 @@ export default function Projects() {
                     alt={project.title}
                     width={400}
                     height={300}
-                    className="w-full h-64 md:h-full object-cover"
+                    className="w-full h-64 md:h-80 object-cover"
                   />
                 </div>
                 <div className="md:w-3/5">
@@ -118,7 +127,7 @@ export default function Projects() {
                     <CardTitle className="text-2xl md:text-3xl text-[#e0bf5f]">
                       {project.title}
                     </CardTitle>
-                    <p className="text-[#fff] text-base md:text-lg mt-2">{project.description}</p>
+                    <p className="text-[#fff]/60 text-sm md:text-base mt-1">{project.description}</p>
                   </CardHeader>
                   <CardContent>
                     <div className="flex items-center space-x-4 text-sm md:text-base text-[#fff]/80 mb-4">
@@ -131,7 +140,10 @@ export default function Projects() {
                         {project.location}
                       </span>
                     </div>
-                    <div className="mb-4">
+                    <p className="text-[#fff] text-base md:text-lg mb-4 leading-relaxed">
+                      {project.summary}
+                    </p>
+                    <div className="mb-6">
                       {project.technologies.map((tech, idx) => (
                         <Badge
                           key={idx}
@@ -142,17 +154,23 @@ export default function Projects() {
                         </Badge>
                       ))}
                     </div>
-                    <ul className="list-disc list-inside text-sm md:text-base text-[#fff] space-y-2 mb-4">
-                      {project.details.map((detail, idx) => (
-                        <li key={idx}>{detail}</li>
-                      ))}
-                    </ul>
                     <div className="flex space-x-4">
                       <Button
-                        variant="outline"
-                        size="sm"
+                        variant="default"
+                        size="default"
                         asChild
-                        className="border-[#e0bf5f] text-[#181818] hover:bg-[#e0bf5f] hover:text-[#181818]"
+                        className="bg-[#e0bf5f] text-[#181818] hover:bg-[#e0bf5f]/90"
+                      >
+                        <Link href={`/projects/${project.id}`}>
+                          View Details
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="default"
+                        asChild
+                        className="text-[#e0bf5f] bg-[#181818] hover:bg-[#e0bf5f]/80 border-[#e0bf5f]"
                       >
                         <a
                           href={project.links.github}
