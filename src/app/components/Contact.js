@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Linkedin, Github, Send } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Send, Loader2 } from "lucide-react";
 import { inter, playfair } from "@/app/styles/fonts";
 import emailjs from "@emailjs/browser";
 import { Toaster } from "@/components/ui/toaster";
@@ -78,7 +78,7 @@ export default function Contact() {
           Contact Me
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <Card className="bg-[#181818] border border-[#e0bf5f]/20">
+          <Card className="bg-[#181818] border border-[#e0bf5f]/20 hover:border-[#e0bf5f]/40 transition-all duration-500 hover:shadow-xl hover:shadow-[#e0bf5f]/10">
             <CardHeader>
               <CardTitle className="text-2xl text-[#e0bf5f] flex items-center">
                 <Mail className="w-6 h-6 mr-2" />
@@ -98,8 +98,9 @@ export default function Contact() {
                     id="name"
                     name="name"
                     placeholder="Your Name"
-                    className="bg-[#181818] border-[#e0bf5f]/50 text-[#fff] placeholder-[#fff]/50"
+                    className="bg-[#181818] border-[#e0bf5f]/50 text-[#fff] placeholder-[#fff]/50 focus:border-[#e0bf5f] focus:ring-2 focus:ring-[#e0bf5f]/20 transition-all duration-300"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div>
@@ -114,8 +115,9 @@ export default function Contact() {
                     name="email"
                     type="email"
                     placeholder="your@email.com"
-                    className="bg-[#181818] border-[#e0bf5f]/50 text-[#fff] placeholder-[#fff]/50"
+                    className="bg-[#181818] border-[#e0bf5f]/50 text-[#fff] placeholder-[#fff]/50 focus:border-[#e0bf5f] focus:ring-2 focus:ring-[#e0bf5f]/20 transition-all duration-300"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div>
@@ -129,18 +131,22 @@ export default function Contact() {
                     id="message"
                     name="message"
                     placeholder="Your message here..."
-                    className="bg-[#181818] border-[#e0bf5f]/50 text-[#fff] placeholder-[#fff]/50"
+                    className="bg-[#181818] border-[#e0bf5f]/50 text-[#fff] placeholder-[#fff]/50 focus:border-[#e0bf5f] focus:ring-2 focus:ring-[#e0bf5f]/20 transition-all duration-300 min-h-32"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
                 <Button
-                  className="w-full bg-[#e0bf5f] text-[#181818] hover:bg-[#e0bf5f]/80"
+                  className="w-full bg-[#e0bf5f] text-[#181818] hover:bg-[#e0bf5f]/80 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#e0bf5f]/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   variant="outline"
                   type="submit"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
-                    "Sending..."
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      Sending...
+                    </>
                   ) : (
                     <>
                       <Send className="w-4 h-4 mr-2" />
@@ -152,7 +158,7 @@ export default function Contact() {
               <Toaster />
             </CardContent>
           </Card>
-          <Card className="bg-[#181818] border border-[#e0bf5f]/20">
+          <Card className="bg-[#181818] border border-[#e0bf5f]/20 hover:border-[#e0bf5f]/40 transition-all duration-500 hover:shadow-xl hover:shadow-[#e0bf5f]/10">
             <CardHeader>
               <CardTitle className="text-2xl text-[#e0bf5f] flex items-center">
                 <Phone className="w-6 h-6 mr-2" />
@@ -160,8 +166,8 @@ export default function Contact() {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="flex items-center space-x-3 text-[#fff]">
-                <Mail className="w-5 h-5 text-[#e0bf5f]" />
+              <div className="flex items-center space-x-3 text-[#fff] p-3 rounded-lg hover:bg-[#e0bf5f]/5 transition-all duration-300 group">
+                <Mail className="w-5 h-5 text-[#e0bf5f] group-hover:scale-110 transition-transform duration-300" />
                 <a
                   href="mailto:matusalakiflom@gmail.com"
                   className="hover:text-[#e0bf5f] transition-colors"
@@ -169,8 +175,8 @@ export default function Contact() {
                   matusalakiflom@gmail.com
                 </a>
               </div>
-              <div className="flex items-center space-x-3 text-[#fff]">
-                <Phone className="w-5 h-5 text-[#e0bf5f]" />
+              <div className="flex items-center space-x-3 text-[#fff] p-3 rounded-lg hover:bg-[#e0bf5f]/5 transition-all duration-300 group">
+                <Phone className="w-5 h-5 text-[#e0bf5f] group-hover:scale-110 transition-transform duration-300" />
                 <a
                   href="tel:+358413102602"
                   className="hover:text-[#e0bf5f] transition-colors"
@@ -178,8 +184,8 @@ export default function Contact() {
                   +358 413102602
                 </a>
               </div>
-              <div className="flex items-center space-x-3 text-[#fff]">
-                <Linkedin className="w-5 h-5 text-[#e0bf5f]" />
+              <div className="flex items-center space-x-3 text-[#fff] p-3 rounded-lg hover:bg-[#e0bf5f]/5 transition-all duration-300 group">
+                <Linkedin className="w-5 h-5 text-[#e0bf5f] group-hover:scale-110 transition-transform duration-300" />
                 <a
                   href="https://www.linkedin.com/in/matusala-gebrehiwot-b0435624b/"
                   target="_blank"
@@ -189,8 +195,8 @@ export default function Contact() {
                   LinkedIn
                 </a>
               </div>
-              <div className="flex items-center space-x-3 text-[#fff]">
-                <Github className="w-5 h-5 text-[#e0bf5f]" />
+              <div className="flex items-center space-x-3 text-[#fff] p-3 rounded-lg hover:bg-[#e0bf5f]/5 transition-all duration-300 group">
+                <Github className="w-5 h-5 text-[#e0bf5f] group-hover:scale-110 transition-transform duration-300" />
                 <a
                   href="https://github.com/matusala3"
                   target="_blank"

@@ -110,16 +110,17 @@ export default function Projects() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="bg-[#181818] border border-[#e0bf5f]/20 overflow-hidden"
+              className="bg-[#181818] border border-[#e0bf5f]/20 overflow-hidden group hover:border-[#e0bf5f]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#e0bf5f]/20 hover:-translate-y-2"
             >
               <div className="md:flex">
-                <div className="md:w-2/5">
+                <div className="md:w-2/5 overflow-hidden relative">
+                  <div className="absolute inset-0 bg-[#e0bf5f]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                   <Image
                     src={project.image}
                     alt={project.title}
                     width={400}
                     height={300}
-                    className="w-full h-64 md:h-80 object-cover"
+                    className="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
                 <div className="md:w-3/5">
@@ -159,23 +160,24 @@ export default function Projects() {
                         variant="default"
                         size="default"
                         asChild
-                        className="bg-[#e0bf5f] text-[#181818] hover:bg-[#e0bf5f]/90"
+                        className="bg-[#e0bf5f] text-[#181818] hover:bg-[#e0bf5f]/90 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#e0bf5f]/50 group/btn"
                       >
                         <Link href={`/projects/${project.id}`}>
                           View Details
-                          <ArrowRight className="w-4 h-4 ml-2" />
+                          <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/btn:translate-x-1" />
                         </Link>
                       </Button>
                       <Button
                         variant="outline"
                         size="default"
                         asChild
-                        className="text-[#e0bf5f] bg-[#181818] hover:bg-[#e0bf5f]/80 border-[#e0bf5f]"
+                        className="text-[#e0bf5f] bg-[#181818] hover:bg-[#e0bf5f] hover:text-[#181818] border-[#e0bf5f] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#e0bf5f]/50"
                       >
                         <a
                           href={project.links.github}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`View ${project.title} on GitHub`}
                         >
                           <Github className="w-4 h-4 mr-2" />
                           GitHub

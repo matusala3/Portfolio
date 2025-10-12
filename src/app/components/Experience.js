@@ -47,7 +47,7 @@ export default function Experience() {
           {experiences.map((exp, index) => (
             <Card
               key={index}
-              className="bg-[#181818] border border-[#e0bf5f]/20 hover:border-[#e0bf5f]/50 transition-colors"
+              className="bg-[#181818] border border-[#e0bf5f]/20 hover:border-[#e0bf5f]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#e0bf5f]/10 hover:-translate-y-1"
             >
               <CardHeader>
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">

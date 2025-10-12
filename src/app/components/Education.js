@@ -36,7 +36,7 @@ export default function Education() {
           Education
         </h2>
         <div className="space-y-6">
-          <Card className="bg-[#1e1e1e] border border-[#f5c842]/30 rounded-lg shadow-lg overflow-hidden">
+          <Card className="bg-[#1e1e1e] border border-[#f5c842]/30 rounded-lg shadow-lg overflow-hidden hover:border-[#f5c842]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#f5c842]/10 hover:-translate-y-1">
             <CardHeader className="bg-[#f5c842]/10 border-b border-[#f5c842]/20 p-6">
               <div className="flex items-center space-x-4">
                 <BookOpen className="w-10 h-10 text-[#f5c842]" />
@@ -98,7 +98,7 @@ export default function Education() {
             </CardContent>
           </Card>
 
-          <Card className="bg-[#1e1e1e] border border-[#e0bf5f]/30 rounded-lg shadow-lg overflow-hidden">
+          <Card className="bg-[#1e1e1e] border border-[#e0bf5f]/30 rounded-lg shadow-lg overflow-hidden hover:border-[#e0bf5f]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#e0bf5f]/10 hover:-translate-y-1">
             <CardHeader className="bg-[#e0bf5f]/10 border-b border-[#e0bf5f]/20 p-6">
               <div className="flex items-center space-x-4">
                 <BookOpen className="w-10 h-10 text-[#e0bf5f]" />

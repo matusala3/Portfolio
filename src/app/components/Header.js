@@ -24,10 +24,26 @@ const navItems = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+
+      // Active section detection
+      const sections = navItems.map(item => item.href.substring(1));
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -49,15 +65,25 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="px-3 py-2 text-[#fff] hover:text-[#e0bf5f] transition-colors rounded-md hover:bg-[#e0bf5f]/10"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.substring(1);
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`px-3 py-2 transition-all duration-300 rounded-md relative ${
+                    isActive
+                      ? "text-[#e0bf5f] bg-[#e0bf5f]/10"
+                      : "text-[#fff] hover:text-[#e0bf5f] hover:bg-[#e0bf5f]/10"
+                  }`}
+                >
+                  {item.name}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#e0bf5f]"></span>
+                  )}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Mobile Navigation */}
@@ -80,18 +106,25 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#181818]/95 backdrop-blur-md">
-          <nav className="container mx-auto px-4 py-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block py-2 text-[#fff] hover:text-[#e0bf5f] transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+        <div className="md:hidden bg-[#181818]/95 backdrop-blur-md animate-in fade-in slide-in-from-top-5 duration-200">
+          <nav className="container mx-auto px-4 py-4 space-y-1">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.substring(1);
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`block py-3 px-4 rounded-md transition-all duration-300 ${
+                    isActive
+                      ? "text-[#e0bf5f] bg-[#e0bf5f]/10 border-l-4 border-[#e0bf5f]"
+                      : "text-[#fff] hover:text-[#e0bf5f] hover:bg-[#e0bf5f]/10 border-l-4 border-transparent"
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       )}

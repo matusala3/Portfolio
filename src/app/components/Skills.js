@@ -62,7 +62,7 @@ export default function Skills() {
           {Object.entries(skills).map(([category, skillList]) => (
             <Card
               key={category}
-              className="bg-[#181818] border border-[#e0bf5f]/20 hover:border-[#e0bf5f]/50 transition-colors"
+              className="bg-[#181818] border border-[#e0bf5f]/20 hover:border-[#e0bf5f]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#e0bf5f]/10 hover:-translate-y-1"
             >
               <CardHeader className="flex flex-row items-center space-x-2">
                 {getIcon(category)}
