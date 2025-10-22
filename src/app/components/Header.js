@@ -14,10 +14,10 @@ import Image from "next/image";
 
 const navItems = [
   { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
   { name: "Education", href: "#education" },
+  { name: "Skills", href: "#skills" },
+  { name: "Experience", href: "#experience" },
+  { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -33,6 +33,15 @@ export default function Header() {
       // Active section detection
       const sections = navItems.map(item => item.href.substring(1));
       const scrollPosition = window.scrollY + 100;
+
+      // Check if we're at the bottom of the page
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50;
+
+      if (isAtBottom) {
+        // If at bottom, highlight the last section (Contact)
+        setActiveSection(sections[sections.length - 1]);
+        return;
+      }
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -59,8 +68,8 @@ export default function Header() {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <Link href="/" className="text-2xl font-bold text-[#e0bf5f]">
-            <Image src="/logo.png" alt="Logo" width={150} height={100} />
+          <Link href="/" className="text-2xl font-bold text-[#e0bf5f] -my-2">
+            <Image src="/logo.png" alt="Logo" width={200} height={133} className="h-auto" />
           </Link>
 
           {/* Desktop Navigation */}

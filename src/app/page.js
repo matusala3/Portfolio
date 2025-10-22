@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 
 function page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0a0a0a] via-[#181818] to-[#0a0a0a] text-[#fff] relative overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-[#0a0a0a] via-[#181818] to-[#0a0a0a] text-[#fff] relative">
       {/* Decorative background elements */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-20 right-10 w-72 h-72 bg-[#e0bf5f]/5 rounded-full blur-[100px]"></div>
@@ -17,7 +17,7 @@ function page() {
       </div>
 
       <Header />
-      <main className="container mx-auto px-4 py-8 relative z-10">
+      <main className="container mx-auto px-4 py-8 relative z-10 overflow-x-hidden">
         <Introduction />
         <Education />
         <Skills />
