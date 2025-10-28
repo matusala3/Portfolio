@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { icons } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,27 +13,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Mati Kif - Software Engineer & System Architect",
-  description: "Portfolio of Mati Kif - Software Engineering student specializing in complex systems design, performance optimization, and scalable solutions. Based in Finland.",
+  title: "Matusala Gebrehiwot – Software Engineer & System Architect",
+  description: "Portfolio of Matusala Gebrehiwot – Software Engineering student specializing in complex systems design, performance optimization, and scalable solutions. Based in Finland.",
   keywords: [
-    "Mati Kif",
+    "Matusala Gebrehiwot",
     "Software Engineer",
     "System Architect",
     "Portfolio",
     "matikif.tech",
     "United States",
-    "Software Engineering Student"
+    "Software Engineering Student",
+    "mati hive",
+    "mati kif",
+    "mati oulu university of applied sciences",
   ],
-  authors: [{ name: "Mati Kif" }],
-  creator: "Mati Kif",
+  authors: [{ name: "Matusala Gebrehiwot" }],
+  creator: "Matusala Gebrehiwot",
   icons: {
-    icon: '/icon.svg',
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Mati Kif - Software Engineer",
+    title: "Matusala Gebrehiwot – Software Engineer",
     description: "Portfolio showcasing software engineering projects and system architecture expertise",
     url: "https://matikif.tech",
-    siteName: "Mati Kif Portfolio",
+    siteName: "Matusala Gebrehiwot Portfolio",
     type: "website",
   },
 };
@@ -41,7 +47,7 @@ export default function RootLayout({ children }) {
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Mati Kif",
+    "name": "Matusala Gebrehiwot",
     "jobTitle": "Software Engineering Student",
     "description": "Software Engineer specializing in system architecture and performance optimization",
     "url": "https://matikif.tech",
@@ -67,6 +73,9 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
+        {/* Favicon (fallbacks) */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
