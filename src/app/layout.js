@@ -30,9 +30,14 @@ export const metadata = {
   authors: [{ name: "Matusala Gebrehiwot" }],
   creator: "Matusala Gebrehiwot",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico' }
+    ],
+    shortcut: ['/favicon-16x16.png'],
+    apple: [
+      { url: '/apple-touch-icon.png' },
+    ],
   },
   openGraph: {
     title: "Matusala Gebrehiwot – Software Engineer",
@@ -73,9 +78,6 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
-        {/* Favicon (fallbacks) */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
